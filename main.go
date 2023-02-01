@@ -4,6 +4,8 @@ import (
 	"strings"
 )
 
+// Function finds the first unique character from given string.
+// Returns rune and ok boolean
 func uniqChar(s string) (rune, bool) {
 	m := make(map[rune]int)
 	for _, v := range s {
@@ -22,6 +24,8 @@ func uniqChar(s string) (rune, bool) {
 	return -1, false
 }
 
+// Function actually takes slice of strings and returns
+// slice of the first unique characters in each sting of given slice.
 func uniqCharsFromArr(arr []string) []rune {
 	charArr := make([]rune, 0)
 	for i := 0; i < len(arr); i++ {
@@ -33,6 +37,8 @@ func uniqCharsFromArr(arr []string) []rune {
 	return charArr
 }
 
+// Exported fuction. Returns the first unique character and ok boolean from the slice of
+// unique characters from each substing separated by whitespace of given string.
 func UniqOfUniqsChar(s string) (rune, bool) {
 	arrStr := strings.Split(s, " ")
 	arrUniqChars := uniqCharsFromArr(arrStr)
